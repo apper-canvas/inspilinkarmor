@@ -7,6 +7,7 @@ import getIcon from './utils/iconUtils';
 // Pages
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import Explore from './pages/Explore';
 
 // Component for the header
 const Header = ({ toggleDarkMode, isDarkMode }) => {
@@ -31,7 +32,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             <a href="#" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary">Home</a>
-            <a href="#" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary">Explore</a>
+            <a href="/explore" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary">Explore</a>
             <a href="#" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary">Categories</a>
             <button 
               onClick={toggleDarkMode}
@@ -74,7 +75,7 @@ const Header = ({ toggleDarkMode, isDarkMode }) => {
           >
             <nav className="container mx-auto px-4 py-3 flex flex-col space-y-3">
               <a href="#" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary py-2">Home</a>
-              <a href="#" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary py-2">Explore</a>
+              <a href="/explore" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary py-2">Explore</a>
               <a href="#" className="font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary py-2">Categories</a>
             </nav>
           </motion.div>
@@ -112,6 +113,7 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
+            <Route path="/explore" element={<Explore />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
